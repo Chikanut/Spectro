@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Glass
+  m_Shader: {fileID: -6465566751694194690, guid: 8c178ff1423fee140842b2b46e5858c0, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_21B397DF:
+        m_Texture: {fileID: 2800000, guid: 7acc6bd588627b046bc1c9b3cd78a6c7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1B14263C: 0
+    - Vector1_7380978E: 1
+    - Vector1_836BF85D: 0.21
+    - Vector1_DC8ADBBB: 0.3
+    - Vector1_FCC24BB7: 1
+    m_Colors:
+    - Color_13911599: {r: 0.5029815, g: 0.8396226, b: 0.8216821, a: 0}
+    - Color_31E4C98E: {r: 0.7795765, g: 0.83137256, b: 0.6313726, a: 0.4117647}
+    - Color_7A090782: {r: 1, g: 1, b: 1, a: 0}
+  m_BuildTextureStacks: []
