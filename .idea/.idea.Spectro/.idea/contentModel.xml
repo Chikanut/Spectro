@@ -68,6 +68,48 @@
             <e p="SceneWidthInspector.cs" t="Include" />
             <e p="Triangulator.cs" t="Include" />
           </e>
+          <e p="MenuNavigation" t="Include">
+            <e p="Core" t="Include">
+              <e p="IMenuNavigationController.cs" t="Include" />
+              <e p="MenuNavigationController.cs" t="Include" />
+              <e p="MenuScreen.cs" t="Include" />
+              <e p="Popup.cs" t="Include" />
+              <e p="ScreenElement.cs" t="Include" />
+              <e p="Showable.cs" t="Include" />
+            </e>
+            <e p="MenuNavigation.asmdef" t="Include" />
+            <e p="Plugins" t="Include">
+              <e p="Networking" t="Include">
+                <e p="Either.cs" t="Include" />
+                <e p="Networking.asmdef" t="Include" />
+                <e p="Result.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="NiceVibrations" t="Include">
+            <e p="Common" t="Include">
+              <e p="Plugins" t="Include">
+                <e p="Android" t="Include">
+                  <e p="AndroidManifest.xml" t="Include" />
+                </e>
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="MMVibrationManager.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Demo" t="Include">
+              <e p="Fonts" t="Include">
+                <e p="Lato" t="Include">
+                  <e p="OFL.txt" t="Include" />
+                </e>
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="NiceVibrationsDemoManager.cs" t="Include" />
+              </e>
+            </e>
+            <e p="license.txt" t="Include" />
+            <e p="readme.txt" t="Include" />
+          </e>
           <e p="ObjectsPool" t="Include">
             <e p="DecorPoolObject.cs" t="Include" />
             <e p="Helpers" t="Include">
@@ -126,14 +168,25 @@
               </e>
             </e>
           </e>
+          <e p="Progress" t="Include">
+            <e p="Observable.cs" t="Include" />
+            <e p="Observer.cs" t="Include" />
+            <e p="Progress.cs" t="Include" />
+            <e p="ProgressBase.cs" t="Include" />
+            <e p="Resetable.cs" t="Include" />
+            <e p="Reseter.cs" t="Include" />
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="FinishTrigger.cs" t="Include" />
+          <e p="LevelSerializer.cs" t="Include" />
           <e p="LightController.cs" t="Include" />
           <e p="LightTrigger.cs" t="Include" />
           <e p="RailMovement.cs" t="Include" />
         </e>
       </e>
+      <e p="MenuNavigation.csproj" t="IncludeRecursive" />
+      <e p="Networking.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="PathCreator.csproj" t="IncludeRecursive" />

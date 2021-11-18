@@ -2,11 +2,16 @@
 
 public class PoolObjectTransform : MonoBehaviour
 {
+    [System.Serializable]
     public class PoolObjectInfo
     {
         public bool SelfDestroy;
-        public TweenMovement.MovingSettings Movement;
-        public TweenRotation.RotationSettings Rotation;
+        [HideInInspector] public string ObjectName;
+        [HideInInspector] public Vector3 LocalPosition;
+        [HideInInspector] public Quaternion LocalRotation;
+        [HideInInspector] public Vector3 LocalScale;
+        [HideInInspector] public TweenMovement.MovingSettings Movement;
+        [HideInInspector] public TweenRotation.RotationSettings Rotation;
     }
 
     private TweenMovement _movement;
@@ -39,8 +44,14 @@ public class PoolObjectTransform : MonoBehaviour
         }
     }
 
-    protected void GetTransformInfo(PoolObjectInfo info)
+    protected void GetDefaultInfo(PoolObjectInfo info)
     {
+        info.ObjectName =  gameObject.name;
+        var transformBuffer = transform;
+        info.LocalPosition = transformBuffer.localPosition;
+        info.LocalRotation = transformBuffer.localRotation;
+        info.LocalScale = transformBuffer.localScale;
+        
         var movingObject = GetComponent<TweenMovement>();
 
         info.Movement = movingObject != null ? movingObject.Settings : new TweenMovement.MovingSettings();

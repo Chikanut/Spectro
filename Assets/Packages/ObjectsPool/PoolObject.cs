@@ -6,7 +6,7 @@ public abstract class PoolObject : PoolObjectTransform
     {
         var infoClass = new PoolObjectInfo();
 
-        GetTransformInfo(infoClass);
+        GetDefaultInfo(infoClass);
 
         infoClass.SelfDestroy = SelfDestroy;
 
