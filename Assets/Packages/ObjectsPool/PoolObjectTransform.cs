@@ -1,15 +1,28 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Xml.Serialization;
+using Packages.Utils.Extensions;
+using UnityEngine;
 
 public class PoolObjectTransform : MonoBehaviour
 {
-    [System.Serializable]
+    public string ObjectName;
+    [HideInInspector]public string InstanceID;
+    [HideInInspector]public List<string> Links;
+
+    [System.Serializable, XmlRoot("Settings")]
     public class PoolObjectInfo
     {
-        public bool SelfDestroy;
         [HideInInspector] public string ObjectName;
+        
+        [HideInInspector] public string InstanceID;
+        [HideInInspector] public List<string> Links;
+        
+        [HideInInspector] public Bounds ObjectBounds;
+        
         [HideInInspector] public Vector3 LocalPosition;
         [HideInInspector] public Quaternion LocalRotation;
         [HideInInspector] public Vector3 LocalScale;
+        
         [HideInInspector] public TweenMovement.MovingSettings Movement;
         [HideInInspector] public TweenRotation.RotationSettings Rotation;
     }
@@ -46,7 +59,9 @@ public class PoolObjectTransform : MonoBehaviour
 
     protected void GetDefaultInfo(PoolObjectInfo info)
     {
-        info.ObjectName =  gameObject.name;
+        info.ObjectName =  ObjectName;
+        info.ObjectBounds = gameObject.GetMaxBounds();
+        info.InstanceID = InstanceID;
         var transformBuffer = transform;
         info.LocalPosition = transformBuffer.localPosition;
         info.LocalRotation = transformBuffer.localRotation;
@@ -63,6 +78,15 @@ public class PoolObjectTransform : MonoBehaviour
 
     protected void AcceptTransformInfo(PoolObjectInfo settings)
     {
+        ObjectName = settings.ObjectName;
+        InstanceID = settings.InstanceID;
+        Links = settings.Links;
+        
+        var transformBuffer = transform;
+        transformBuffer.localPosition = settings.LocalPosition;
+        transformBuffer.localRotation =  settings.LocalRotation;
+        transformBuffer.localScale = settings.LocalScale;
+        
         Movement.Init(settings.Movement);
         Rotation.Init(settings.Rotation);
     }

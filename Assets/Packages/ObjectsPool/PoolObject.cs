@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Packages.Utils.Extensions;
+using UnityEngine;
 
+[System.Serializable]
 public abstract class PoolObject : PoolObjectTransform
 {
     public virtual string SerializeSettings()
@@ -7,9 +10,7 @@ public abstract class PoolObject : PoolObjectTransform
         var infoClass = new PoolObjectInfo();
 
         GetDefaultInfo(infoClass);
-
-        infoClass.SelfDestroy = SelfDestroy;
-
+        
         return Helpers.XMLHelper.Serialize(infoClass);
     }
 
@@ -18,26 +19,28 @@ public abstract class PoolObject : PoolObjectTransform
         var infoClass = Helpers.XMLHelper.Deserialize<PoolObjectInfo>(info);
 
         AcceptTransformInfo(infoClass);
-
-        SelfDestroy = infoClass.SelfDestroy;
     }
 
-    public bool SelfDestroy = false;
-
+    public abstract void AcceptObjectsLinks(List<PoolObject> objects);
+    
     public abstract void ResetState();
 
     public virtual void Destroy() {
         ResetState();
-    
-        IsDestroying = false;
+        
         IsActive = false;
     }
-
-    [HideInInspector]
-    public bool IsDestroying = false;
+    
 
     public virtual bool IsActive {
-        get { return gameObject.activeSelf; }
-        set {gameObject.SetActive(value);}
+        get => gameObject.activeSelf;
+        set => gameObject.SetActive(value);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        var bounds = gameObject.GetMaxBounds();
+        Gizmos.DrawWireCube(bounds.center, bounds.size);
     }
 }

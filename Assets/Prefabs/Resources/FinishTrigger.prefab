@@ -112,10 +112,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db02a6149acf1e44b1201387131966c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectName: FinishTrigger
+  InstanceID: 
+  Links: []
+  SerializeLinks: 1
   _listeners:
   - {fileID: 2124611262667998006}
-  _targetIds:
-  - 0
+  _settings:
+    ObjectName: 
+    InstanceID: 
+    Links: []
+    ObjectBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    LocalPosition: {x: 0, y: 0, z: 0}
+    LocalRotation: {x: 0, y: 0, z: 0, w: 0}
+    LocalScale: {x: 0, y: 0, z: 0}
+    Movement:
+      Duration: 0
+      IsForward: 1
+      Loop: 0
+      EnableCycle: 0
+      Ease: 0
+      Positions: []
+      AnchorPositionOnce: 0
+    Rotation:
+      Duration: 0
+      IsForward: 1
+      Loop: 0
+      EnableCycle: 0
+      Ease: 0
+      Rotations: []
+    TargetIDs:
+    - 0
 --- !u!114 &2124611262667998006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,8 +157,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcb855519ced68478ce9ae41387b077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectName: FinishTrigger
+  InstanceID: 
+  Links: []
   _mesh: {fileID: 1704470464052827118}
   _churgeTime: 2
   _defaultColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
   _churgedColor: {r: 1, g: 0.8955444, b: 0, a: 1}
-  _nextSceneIndex: 0
+  _settings:
+    ObjectName: 
+    InstanceID: 
+    Links: []
+    ObjectBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    LocalPosition: {x: 0, y: 0, z: 0}
+    LocalRotation: {x: 0, y: 0, z: 0, w: 0}
+    LocalScale: {x: 0, y: 0, z: 0}
+    Movement:
+      Duration: 0
+      IsForward: 1
+      Loop: 0
+      EnableCycle: 0
+      Ease: 0
+      Positions: []
+      AnchorPositionOnce: 0
+    Rotation:
+      Duration: 0
+      IsForward: 1
+      Loop: 0
+      EnableCycle: 0
+      Ease: 0
+      Rotations: []
+    NextSceneIndex: 0

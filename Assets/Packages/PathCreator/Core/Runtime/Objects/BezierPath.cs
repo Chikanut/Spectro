@@ -22,7 +22,7 @@ namespace PathCreation {
  #region Fields
 
  [SerializeField, HideInInspector]
- List<Vector3> points;
+ public List<Vector3> points;
  [SerializeField, HideInInspector]
  bool isClosed;
  [SerializeField, HideInInspector]
@@ -38,7 +38,7 @@ namespace PathCreation {
 
  // Normals settings
  [SerializeField, HideInInspector]
- List<float> perAnchorNormalsAngle;
+ public List<float> perAnchorNormalsAngle;
  [SerializeField, HideInInspector]
  float globalNormalsAngle;
  [SerializeField, HideInInspector]
@@ -47,6 +47,11 @@ namespace PathCreation {
  #endregion
 
  #region Constructors
+
+ public BezierPath()
+ {
+     
+ }
 
  /// <summary> Creates a two-anchor path centred around the given centre point </summary>
  ///<param name="isClosed"> Should the end point connect back to the start point? </param>

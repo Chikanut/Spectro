@@ -8,33 +8,32 @@ interface ILightInteractive
     void OnLightOut(string lightID);
 }
 
-public class LightController : PoolObject
+public class LightController : ObjectBase
 {
     [System.Serializable]
     public class Settings : PoolObjectInfo
     {
-       
+        public string LightID = "0";
         public Vector2 _initialDirection = new Vector2(1, 0); 
         public float _lineWidth;
         public LayerMask _reflectLayers;
         public int _maxReflects = 100;
         public float _outDistance;
     }
-
-    [Header("ID")]
-    public string LightID = "0";
+    
     
     [Header("Components")]
     [SerializeField] private LineRenderer _line;
     [SerializeField] private Transform _litePoint;
 
-    [Header("Settings")]
+    [Space]
     [SerializeField] private Settings _settings;
     
     private List<ILightInteractive> _interactives = new List<ILightInteractive>();
     
     void Start()
     {
+        _line.useWorldSpace = true;
         _line.endWidth = _line.startWidth = _settings._lineWidth;
     }
 
@@ -64,7 +63,7 @@ public class LightController : PoolObject
                 {
                     if (!_interactives.Contains(interactive))
                     {
-                        interactive.OnLightOn(LightID);
+                        interactive.OnLightOn(_settings.LightID);
                         _interactives.Add(interactive);
                     }
 
@@ -98,7 +97,7 @@ public class LightController : PoolObject
 
         foreach (var interactive in _interactives.Where(interactive => !interactives.Contains(interactive)))
         {
-            interactive.OnLightOut(LightID);
+            interactive.OnLightOut(_settings.LightID);
             interactivesToDestroy.Add(interactive);
         }
 
@@ -117,8 +116,6 @@ public class LightController : PoolObject
     {
         GetDefaultInfo(_settings);
 
-        _settings.SelfDestroy = SelfDestroy;
-
         return Helpers.XMLHelper.Serialize(_settings);
     }
 
@@ -127,8 +124,11 @@ public class LightController : PoolObject
         _settings = Helpers.XMLHelper.Deserialize<Settings>(info);
 
         AcceptTransformInfo(_settings);
+    }
 
-        SelfDestroy = _settings.SelfDestroy;
+    public override void AcceptObjectsLinks(List<PoolObject> objects)
+    {
+        
     }
 
     public override void ResetState()

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PathCreation {
     public class PathCreator : MonoBehaviour {
@@ -20,7 +19,7 @@ namespace PathCreation {
         public VertexPath path {
             get {
                 if (!initialized) {
-                    InitializeEditorData (false);
+                    InitializeEditorData (true);
                 }
                 return editorData.GetVertexPath(transform);
             }
@@ -30,13 +29,13 @@ namespace PathCreation {
         public BezierPath bezierPath {
             get {
                 if (!initialized) {
-                    InitializeEditorData (false);
+                    InitializeEditorData (true);
                 }
                 return editorData.bezierPath;
             }
             set {
                 if (!initialized) {
-                    InitializeEditorData (false);
+                    InitializeEditorData (true);
                 }
                 editorData.bezierPath = value;
             }

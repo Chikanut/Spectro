@@ -1,16 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class FinishTrigger : LightTriggerListener
-{ 
+{
+    [System.Serializable]
+    public new class Settings : PoolObjectInfo
+    {
+        public int NextSceneIndex;
+    }
+
     [SerializeField] private MeshRenderer _mesh;
     [SerializeField] private float _churgeTime;
     [SerializeField] private Color _defaultColor;
     [SerializeField] private Color _churgedColor;
-    [SerializeField] private int _nextSceneIndex;
+    [SerializeField] private Settings _settings;
     
     private Sequence _color;
 
@@ -18,7 +22,7 @@ public class FinishTrigger : LightTriggerListener
     {
         Disactivate();
     }
-    
+
     public override void Activate()
     {
         _color?.Kill();
@@ -37,6 +41,20 @@ public class FinishTrigger : LightTriggerListener
     
     void OnFinished()
     {
-        SceneManager.LoadScene(_nextSceneIndex);
+        SceneManager.LoadScene(_settings.NextSceneIndex);
+    }
+    
+    public override string SerializeSettings()
+    {
+        GetDefaultInfo(_settings);
+
+        return Helpers.XMLHelper.Serialize(_settings);
+    }
+
+    public override void AcceptSettings(string info)
+    {
+        _settings = Helpers.XMLHelper.Deserialize<Settings>(info);
+
+        AcceptTransformInfo(_settings);
     }
 }

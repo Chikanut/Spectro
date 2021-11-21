@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(ParticleSystem))]
 public class ParticlePoolObject : PoolObject
@@ -22,6 +23,11 @@ public class ParticlePoolObject : PoolObject
         if (_destroyAfterPlay && Particles)
             if (!Particles.IsAlive())
                 Destroy();
+    }
+
+    public override void AcceptObjectsLinks(List<PoolObject> objects)
+    {
+        
     }
 
     public override void ResetState()
