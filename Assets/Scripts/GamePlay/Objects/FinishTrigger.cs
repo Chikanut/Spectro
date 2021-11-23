@@ -7,7 +7,7 @@ public class FinishTrigger : LightTriggerListener
     [System.Serializable]
     public new class Settings : PoolObjectInfo
     {
-        public int NextSceneIndex;
+        // public int NextSceneIndex;
     }
 
     [SerializeField] private MeshRenderer _mesh;
@@ -41,7 +41,8 @@ public class FinishTrigger : LightTriggerListener
     
     void OnFinished()
     {
-        SceneManager.LoadScene(_settings.NextSceneIndex);
+        GameManager.Instance.FinishTriggerActivated();
+        // SceneManager.LoadScene(_settings.NextSceneIndex);
     }
     
     public override string SerializeSettings()

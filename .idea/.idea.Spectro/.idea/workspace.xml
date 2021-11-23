@@ -4,30 +4,18 @@
     <list default="true" id="d83c5075-8329-4660-83a0-93fbbc1f2fd0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/ObjectsPool/DecorPoolObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/ObjectsPool/DecorPoolObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/ObjectsPool/ObstaclePoolObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/ObjectsPool/ObstaclePoolObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/ObjectsPool/ParticlePoolObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/ObjectsPool/ParticlePoolObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/ObjectsPool/PoolObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/ObjectsPool/PoolObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/ObjectsPool/PoolObjectTransform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/ObjectsPool/PoolObjectTransform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/BezierPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/BezierPath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/PathCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/PathCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/PathPlacer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/PathPlacer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FinishTrigger.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FinishTrigger.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Light/LightEmmiter.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Light/LightEmmiter.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/RailObject.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/RailObject.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test_0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test_0.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test_1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test_1.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test_2.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test_2.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FinishTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FinishTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelSerializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelSerializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LightController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LightController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LightTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LightTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RailMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RailMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FinishTrigger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FinishTrigger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LightController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LightController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LightTrigger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LightTrigger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RailMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RailMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,22 +27,23 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Packages/MenuNavigation/Core/MenuNavigationController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LightTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/ParticlePoolObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/PoolObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LightController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/Helpers/XMLHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/LightController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/ObstaclePoolObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/ObjectsPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/LightTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/DecorPoolObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Utility/MathUtility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../slimefactory/Assets/Tools/LevelGenerator/Scripts/_VisartechInc/LevelSpawner/Level/ObjectSerializer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RailMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/Objects/FinishTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/Progress/Progress.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Test_0.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/Editor/PathSceneToolEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../GummyGo/GummyGo/Assets/Scripts/_VisartechInc/LevelSpawner/Level/ObjectSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelSerializer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Match3DNew/Assets/DevelopmentTools/Editor/GameConfigurator/Default/GameCoreEditor/Editor/GS_CoreEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/PathPlacer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/BezierPath.cs" root0="FORCE_HIGHLIGHTING" />
@@ -65,7 +54,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/PathCreator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/PathSceneTool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/PathCreatorData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FinishTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Editor/PathEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/PoolObjectTransform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Match3DNew/Assets/DevelopmentTools/Editor/GameConfigurator/Default/GameCoreEditor/GS_Core.cs" root0="SKIP_HIGHLIGHTING" />
@@ -92,6 +81,11 @@
         <option value="$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/PathPlacer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RailMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Packages/ObjectsPool/PoolObjectTransform.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/Objects/FinishTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/LightTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/LightController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/CharacterController.cs" />
       </list>
     </option>
   </component>
@@ -138,6 +132,8 @@
       <workItem from="1636998507141" duration="2200000" />
       <workItem from="1637218338514" duration="2069000" />
       <workItem from="1637475811459" duration="11317000" />
+      <workItem from="1637561779778" duration="4086000" />
+      <workItem from="1637650339957" duration="3496000" />
     </task>
     <servers />
   </component>
@@ -151,13 +147,17 @@
       <screen x="-1080" y="-263" width="1080" height="1880" />
     </state>
     <state x="-1080" y="332" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1080.-263.1080.1880@-1080.-263.1080.1880" timestamp="1637477910618" />
-    <state x="1114" y="400" key="RiderGenerateDialog" timestamp="1636998757679">
+    <state x="1114" y="400" key="RiderGenerateDialog" timestamp="1637563390797">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1114" y="400" key="RiderGenerateDialog/0.0.2560.1400/-1080.-263.1080.1880@0.0.2560.1400" timestamp="1636998757679" />
-    <state x="-1080" y="-263" width="1096" height="1387" maximized="true" key="dock-window-1" timestamp="1637484219982">
+    <state x="1114" y="400" key="RiderGenerateDialog/0.0.2560.1400/-1080.-263.1080.1880@0.0.2560.1400" timestamp="1637563390797" />
+    <state x="-1080" y="-263" width="1096" height="1387" maximized="true" key="dock-window-1" timestamp="1637651230579">
       <screen x="-1080" y="-263" width="1080" height="1880" />
     </state>
-    <state x="-1080" y="-263" width="1096" height="1387" maximized="true" key="dock-window-1/0.0.2560.1400/-1080.-263.1080.1880@0.0.2560.1400" timestamp="1637484219982" />
+    <state x="-1080" y="-263" width="1096" height="1387" maximized="true" key="dock-window-1/0.0.2560.1400/-1080.-263.1080.1880@0.0.2560.1400" timestamp="1637651230579" />
+    <state x="-884" y="319" key="run.anything.popup" timestamp="1637653788201">
+      <screen x="-1080" y="-263" width="1080" height="1880" />
+    </state>
+    <state x="-884" y="319" key="run.anything.popup/0.0.2560.1400/-1080.-263.1080.1880@0.0.2560.1400" timestamp="1637653788201" />
   </component>
 </project>

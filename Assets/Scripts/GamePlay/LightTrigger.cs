@@ -24,7 +24,7 @@ public class LightTrigger : ObjectBase, ILightInteractive
     
     List<string> _lightsIn = new List<string>();
     
-    public void OnLightOn(string lightID)
+    public void OnLightOn(string lightID, LightController lightController)
     {
         var isReady = IsLightReady();
         
