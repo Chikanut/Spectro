@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using PathCreation.Utility;
 using UnityEngine;
 
+[RequireComponent(typeof(Controller2D))]
 public class CharacterController : MonoBehaviour, ILightInteractive
 {
     [System.Serializable]
@@ -11,20 +12,34 @@ public class CharacterController : MonoBehaviour, ILightInteractive
         public int Lives;
         public int Speed;
         public float JumpHeight;
-        public float JumpDistance;
+        public float TimeToJumpApex = 0.4f;
+        public float MovementSpeed;
+        public float GroundAccelerationTime = 1;
+        public float AirborneAccelerationTIme = 0.2f;
+
     }
 
     [SerializeField] private Settings _settings;
 
     private int _currentLives;
-    private Vector3 _velocity;
     private bool _isInLite;
     private Vector3 _lightDir;
     private LightController _currentController;
+
+    private Controller2D _controller;
+    
+    private float _gravity = 20;
+    private Vector3 _velocity;
+    private float _jumpVelocity;
+    private float _veloctyXSmoothing;
     
     void Start()
     {
         _currentLives = _settings.Lives;
+        _controller = GetComponent<Controller2D>();
+
+        _gravity = (2 * _settings.JumpHeight) / Mathf.Pow(_settings.TimeToJumpApex, 2);
+        _jumpVelocity = _gravity * _settings.TimeToJumpApex;
     }
 
     void StartRun()
@@ -50,23 +65,50 @@ public class CharacterController : MonoBehaviour, ILightInteractive
     {
         if (!_isInLite)
         {
-            _velocity += Vector3.down * (9.8f * Time.deltaTime);
-            transform.position += _velocity * Time.deltaTime;
+            if (_controller.Collisions.Above || _controller.Collisions.Below)
+            {
+                _velocity.y = 0;
+            }
+
+            Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+            if (Input.GetKeyDown(KeyCode.Space) && _controller.Collisions.Below)
+            {
+                _velocity.y = _jumpVelocity;
+            }
+
+            var targetVelocityX = input.x * _settings.MovementSpeed;
+
+            _velocity.x = Mathf.SmoothDamp(_velocity.x, targetVelocityX, ref _veloctyXSmoothing,
+                _controller.Collisions.Below ? _settings.GroundAccelerationTime : _settings.AirborneAccelerationTIme);
+
+            _velocity += Vector3.down * (_gravity * Time.deltaTime);
+            _controller.Move(_velocity * Time.deltaTime);
         }
         else
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _velocity.y = _jumpVelocity;
+                _isInLite = false;
+                return;
+            }
+
             UpdatePointsData();
-            
+
             var currentTime = GetClosestTimeOnPath(transform.position);
             var length = _length;
-            
+
             currentTime += (_settings.Speed * Time.deltaTime) / length;
 
             var nextPos = GetPointAtTime(currentTime);
-            
+
             transform.position = nextPos;
         }
     }
+
+    #region LightMovement
+
     
     List<Vector3> _points = new List<Vector3>();
     List<float> _times = new List<float>();
@@ -174,4 +216,5 @@ public class CharacterController : MonoBehaviour, ILightInteractive
         
         return (closestSegmentIndexA, closestSegmentIndexB, t);
     }
+    #endregion
 }

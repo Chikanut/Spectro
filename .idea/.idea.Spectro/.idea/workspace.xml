@@ -5,17 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test_0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test_0.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FinishTrigger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FinishTrigger.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LightController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LightController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LightTrigger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LightTrigger.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectBase.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RailMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RailMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/CharacterController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/CharacterController.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +37,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelSerializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Match3DNew/Assets/DevelopmentTools/Editor/GameConfigurator/Default/GameCoreEditor/Editor/GS_CoreEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/PathPlacer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/BezierPath.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/RoadMeshCreator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelDeserializer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -53,8 +45,8 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@10.7.0/Shaders/Lit.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/PathCreator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/PathSceneTool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Controller2D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/PathCreatorData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Editor/PathEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/PoolObjectTransform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Match3DNew/Assets/DevelopmentTools/Editor/GameConfigurator/Default/GameCoreEditor/GS_Core.cs" root0="SKIP_HIGHLIGHTING" />
@@ -86,6 +78,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/LightTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/LightController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/CharacterController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Controller2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" />
       </list>
     </option>
   </component>
@@ -133,7 +127,8 @@
       <workItem from="1637218338514" duration="2069000" />
       <workItem from="1637475811459" duration="11317000" />
       <workItem from="1637561779778" duration="4086000" />
-      <workItem from="1637650339957" duration="3496000" />
+      <workItem from="1637650339957" duration="3578000" />
+      <workItem from="1637737780193" duration="3738000" />
     </task>
     <servers />
   </component>
@@ -151,10 +146,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1114" y="400" key="RiderGenerateDialog/0.0.2560.1400/-1080.-263.1080.1880@0.0.2560.1400" timestamp="1637563390797" />
-    <state x="-1080" y="-263" width="1096" height="1387" maximized="true" key="dock-window-1" timestamp="1637651230579">
+    <state x="-1080" y="-263" width="1096" height="1387" maximized="true" key="dock-window-1" timestamp="1637737778864">
       <screen x="-1080" y="-263" width="1080" height="1880" />
     </state>
-    <state x="-1080" y="-263" width="1096" height="1387" maximized="true" key="dock-window-1/0.0.2560.1400/-1080.-263.1080.1880@0.0.2560.1400" timestamp="1637651230579" />
+    <state x="-1080" y="-263" width="1096" height="1387" maximized="true" key="dock-window-1/0.0.2560.1400/-1080.-263.1080.1880@0.0.2560.1400" timestamp="1637737778864" />
     <state x="-884" y="319" key="run.anything.popup" timestamp="1637653788201">
       <screen x="-1080" y="-263" width="1080" height="1880" />
     </state>
