@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d83c5075-8329-4660-83a0-93fbbc1f2fd0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spectro/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Controller2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Controller2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test_0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test_0.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,39 +21,59 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Packages/MenuNavigation/Core/MenuNavigationController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://D:/Unreal Projects/MenuNavigation/MenuNavigation/Assets/Scripts/Controllers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configs/LocationsConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/ParticlePoolObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/MenuNavigation/Core/MenuScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/PoolObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/Helpers/XMLHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/LightController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/ObstaclePoolObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configs/Configs.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../FoxTown/Assets/Scripts/Core/PoolManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/MenuNavigation/Core/Showable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../FoxTown/Assets/Scripts/Core/Controllers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/ObjectsPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configs/Editor/LevelConfigsEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/LightTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/MenuNavigation/Core/Popup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configs/LevelsConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/DecorPoolObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Utility/MathUtility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configs/Editor/LocationsConfigEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Test/Assets/NeonDriver Generator/Scripts/_VisartechInc/LevelSpawner/Configs/Configs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../slimefactory/Assets/Tools/LevelGenerator/Scripts/_VisartechInc/LevelSpawner/Level/ObjectSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/Objects/FinishTrigger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Packages/Progress/Progress.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../StoryTime/Assets/Scripts/CompositionRoot.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Test_0.unity" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/RaycastController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/Editor/PathSceneToolEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../GummyGo/GummyGo/Assets/Scripts/_VisartechInc/LevelSpawner/Level/ObjectSerializer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://D:/Unreal Projects/MenuNavigation/MenuNavigation/Assets/Scripts/CompositionRoot.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelSerializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Match3DNew/Assets/DevelopmentTools/Editor/GameConfigurator/Default/GameCoreEditor/Editor/GS_CoreEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/PathPlacer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/BezierPath.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/RoadMeshCreator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelDeserializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/VertexPath.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@10.7.0/Shaders/Lit.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/PathCreator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/PathSceneTool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Controller2D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Objects/PathCreatorData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Editor/PathEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/PoolObjectTransform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Match3DNew/Assets/DevelopmentTools/Editor/GameConfigurator/Default/GameCoreEditor/GS_Core.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/Helpers/XMLHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/Progress/Observable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/Progress/Observer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Runtime/Utility/MathUtility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/Progress/Progress.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/RaycastController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/Editor/PathSceneToolEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/PathPlacer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Major Balance/Assets/Scripts/LevelGenerator/Scripts/_VisartechInc/LevelSpawner/Configs/Configs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/RoadMeshCreator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@10.7.0/Shaders/Lit.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/PathSceneTool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/PathCreator/Core/Editor/PathEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CompositionRoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/PoolObjectTransform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../StoryTime/Assets/Scripts/Controllers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Packages/ObjectsPool/TweenMovement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -72,14 +97,23 @@
         <option value="$PROJECT_DIR$/Assets/Packages/PathCreator/Examples/Scripts/PathPlacer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RailMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Packages/ObjectsPool/PoolObjectTransform.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/Objects/FinishTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/LightTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/LightController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/CharacterController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/Controller2D.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/RaycastController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CompositionRoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Configs.cs" />
+        <option value="$PROJECT_DIR$/../Test/Assets/NeonDriver Generator/Scripts/_VisartechInc/LevelSpawner/Configs/Configs.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Configs/Editor/LevelConfigsEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Configs/LevelsConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Configs/Configs.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Configs/LocationsConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Configs/Editor/LocationsConfigEditor.cs" />
       </list>
     </option>
   </component>
@@ -129,7 +163,9 @@
       <workItem from="1637561779778" duration="4086000" />
       <workItem from="1637650339957" duration="3578000" />
       <workItem from="1637737780193" duration="3738000" />
-      <workItem from="1637823101047" duration="3787000" />
+      <workItem from="1637823101047" duration="3929000" />
+      <workItem from="1637908156416" duration="3519000" />
+      <workItem from="1638253888382" duration="1468000" />
     </task>
     <servers />
   </component>
@@ -147,10 +183,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1114" y="400" key="RiderGenerateDialog/0.0.2560.1400/-1080.-263.1080.1880@0.0.2560.1400" timestamp="1637563390797" />
-    <state x="-1080" y="-228" width="1096" height="1387" key="dock-window-1" timestamp="1637826038849">
-      <screen x="-1080" y="-263" width="1080" height="1880" />
+    <state x="623" y="-20" width="1096" height="1387" maximized="true" key="dock-window-1" timestamp="1638255369857">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="-1080" y="-228" width="1096" height="1387" key="dock-window-1/0.0.2560.1400/-1080.-263.1080.1880@0.0.2560.1400" timestamp="1637826038849" />
+    <state x="623" y="-20" width="1096" height="1387" maximized="true" key="dock-window-1/0.0.2560.1400/-1080.-263.1080.1880@0.0.2560.1400" timestamp="1638255369857" />
     <state x="-884" y="319" key="run.anything.popup" timestamp="1637653788201">
       <screen x="-1080" y="-263" width="1080" height="1880" />
     </state>

@@ -63,24 +63,19 @@ public class CharacterController : MonoBehaviour, ILightInteractive
 
     void Update()
     {
+        var input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        var targetVelocityX = input.x * _settings.MovementSpeed;
+
+        _velocity.x = Mathf.SmoothDamp(_velocity.x, targetVelocityX, ref _veloctyXSmoothing,
+            _controller.Collisions.Below ? _settings.GroundAccelerationTime : _settings.AirborneAccelerationTIme);
+        
         if (!_isInLite)
         {
             if (_controller.Collisions.Above || _controller.Collisions.Below)
-            {
                 _velocity.y = 0;
-            }
-
-            Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
             if (Input.GetKeyDown(KeyCode.Space) && _controller.Collisions.Below)
-            {
                 _velocity.y = _jumpVelocity;
-            }
-
-            var targetVelocityX = input.x * _settings.MovementSpeed;
-
-            _velocity.x = Mathf.SmoothDamp(_velocity.x, targetVelocityX, ref _veloctyXSmoothing,
-                _controller.Collisions.Below ? _settings.GroundAccelerationTime : _settings.AirborneAccelerationTIme);
 
             _velocity += Vector3.down * (_gravity * Time.deltaTime);
             _controller.Move(_velocity * Time.deltaTime);
