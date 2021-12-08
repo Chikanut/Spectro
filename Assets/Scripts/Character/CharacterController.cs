@@ -4,7 +4,7 @@ using PathCreation.Utility;
 using UnityEngine;
 
 [RequireComponent(typeof(Controller2D))]
-public class CharacterController : MonoBehaviour, ILightInteractive
+public class CharacterController : MonoBehaviour
 {
     [System.Serializable]
     public class Settings
@@ -33,7 +33,7 @@ public class CharacterController : MonoBehaviour, ILightInteractive
     private float _jumpVelocity;
     private float _veloctyXSmoothing;
     
-    void Start()
+    void Awake()
     {
         _currentLives = _settings.Lives;
         _controller = GetComponent<Controller2D>();
@@ -42,69 +42,62 @@ public class CharacterController : MonoBehaviour, ILightInteractive
         _jumpVelocity = _gravity * _settings.TimeToJumpApex;
     }
 
-    void StartRun()
-    {
-        
-    }
-
-    public void OnLightOn(string lightID, LightController lightController)
-    {
-        if(_isInLite) return;
-        
-        _isInLite = true;
-        _currentController = lightController;
-    }
-
-    public void OnLightOut(string lightID)
-    {
-        _isInLite = false;
-        _currentController = null;
-    }
-
     void Update()
     {
-        var input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        var targetVelocityX = input.x * _settings.MovementSpeed;
+        UpdateInput();
+        
+        var targetVelocityX = _input.x * _settings.MovementSpeed;
 
         _velocity.x = Mathf.SmoothDamp(_velocity.x, targetVelocityX, ref _veloctyXSmoothing,
             _controller.Collisions.Below ? _settings.GroundAccelerationTime : _settings.AirborneAccelerationTIme);
         
-        if (!_isInLite)
-        {
-            if (_controller.Collisions.Above || _controller.Collisions.Below)
-                _velocity.y = 0;
 
-            if (Input.GetKeyDown(KeyCode.Space) && _controller.Collisions.Below)
-                _velocity.y = _jumpVelocity;
+        if (_controller.Collisions.Above || _controller.Collisions.Below)
+            _velocity.y = 0;
+        
+        if (_jumping && _controller.Collisions.Below)
+            _velocity.y = _jumpVelocity;
+        
+        _velocity += Vector3.down * (_gravity * Time.deltaTime);
+        _controller.Move(_velocity * Time.deltaTime);
 
-            _velocity += Vector3.down * (_gravity * Time.deltaTime);
-            _controller.Move(_velocity * Time.deltaTime);
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                _velocity.y = _jumpVelocity;
-                _isInLite = false;
-                return;
-            }
-
-            UpdatePointsData();
-
-            var currentTime = GetClosestTimeOnPath(transform.position);
-            var length = _length;
-
-            currentTime += (_settings.Speed * Time.deltaTime) / length;
-
-            var nextPos = GetPointAtTime(currentTime);
-
-            transform.position = nextPos;
-        }
     }
+    
+    private Vector2 _input;
+    private bool _jumping;
 
+    void UpdateInput()
+    {
+        _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        _jumping = Input.GetKeyDown(KeyCode.Space);
+
+    }
+    
+    //We gona make this logic in future
     #region LightMovement
 
-    
+
+    void UpdateLightMovement()
+    {
+        if (_jumping)
+        {
+            _velocity.y = _jumpVelocity;
+            _isInLite = false;
+            return;
+        }
+        
+        UpdatePointsData();
+        
+        var currentTime = GetClosestTimeOnPath(transform.position);
+        var length = _length;
+        
+        currentTime += (_settings.Speed * Time.deltaTime) / length;
+        
+        var nextPos = GetPointAtTime(currentTime);
+        
+        transform.position = nextPos;
+    }
+
     List<Vector3> _points = new List<Vector3>();
     List<float> _times = new List<float>();
     List<float> _cumulativeLengthAtEachVertex = new List<float>();
@@ -212,4 +205,5 @@ public class CharacterController : MonoBehaviour, ILightInteractive
         return (closestSegmentIndexA, closestSegmentIndexB, t);
     }
     #endregion
+    
 }

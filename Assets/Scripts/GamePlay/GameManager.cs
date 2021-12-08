@@ -2,28 +2,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public class GameInfo : Observable
-    {
-        public enum GameState
-        {
-            Construction,
-            Puzzle,
-            Platformer
-        }
-
-        private GameState _state;
-        public GameState State
-        {
-            get => _state;
-            set
-            {
-                _state = value;
-                NotifyObservers();
-            }
-        }
-
-    }
-
     private static GameManager _instance;
 
     public static GameManager Instance
@@ -43,16 +21,13 @@ public class GameManager : MonoBehaviour
         set => _instance = value;
     }
 
-    public GameInfo Info = new GameInfo();
+    void Start()
+    {
+        Init();
+    }
 
     public void Init()
     {
-        
-    }
-
-    public void FinishTriggerActivated()
-    {
-        Info.State = GameInfo.GameState.Platformer;
-        
+     
     }
 }

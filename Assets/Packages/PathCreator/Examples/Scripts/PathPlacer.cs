@@ -1,4 +1,7 @@
-﻿using PathCreation;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 
 namespace PathCreation.Examples {
@@ -6,41 +9,69 @@ namespace PathCreation.Examples {
     [ExecuteInEditMode]
     public class PathPlacer : PathSceneTool {
 
-        public GameObject prefab;
-        public GameObject holder;
+        public SpriteRenderer _dotImage;
         public float spacing = 3;
-
+    
         const float minSpacing = .1f;
+        
+        List<SpriteRenderer> _points = new List<SpriteRenderer>();
 
-        public void Generate () {
-            if (pathCreator != null && prefab != null && holder != null) {
-                DestroyObjects ();
+        private void Awake()
+        {
+            _points = GetComponentsInChildren<SpriteRenderer>().ToList();
+        }
 
-                VertexPath path = pathCreator.path;
+        public void Generate ()
+        {
+            if (pathCreator == null || _dotImage == null) return;
+            
+            DestroyObjects ();
 
-                spacing = Mathf.Max(minSpacing, spacing);
-                float dst = 0;
+            var path = pathCreator.path;
+            float dst = 0;
+            
+            spacing = Mathf.Max(minSpacing, spacing);
 
-                while (dst < path.length) {
-                    Vector3 point = path.GetPointAtDistance (dst);
-                    // Quaternion rot = path.GetRotationAtDistance (dst);
-                    Instantiate (prefab, point, Quaternion.identity, holder.transform);
-                    dst += spacing;
-                }
+            while (dst < path.length)
+            {
+                var point = path.GetPointAtDistance (dst);
+                var newPoint = Instantiate (_dotImage, point, Quaternion.identity, transform);
+                _points.Add(newPoint);
+                dst += spacing;
             }
         }
 
-        void DestroyObjects () {
-            int numChildren = holder.transform.childCount;
-            for (int i = numChildren - 1; i >= 0; i--) {
-                DestroyImmediate (holder.transform.GetChild (i).gameObject, false);
+        private Sequence _showingSequence;
+        
+        public void Show(bool show)
+        {
+            _showingSequence?.Kill();
+            _showingSequence = DOTween.Sequence();
+            
+            for (int i = 0; i < _points.Count; i++)
+            {
+                if(_points[i] == null) continue;
+                _showingSequence.Insert(0, _points[i].DOFade(show ? 1 : 0, 1));
             }
+
+            _showingSequence.Play();
         }
 
-        protected override void PathUpdated () {
-            if (pathCreator != null) {
+        void DestroyObjects ()
+        {
+            for (int i = _points.Count - 1; i >= 0; i--)
+            {
+                if(_points[i] != null)
+                    DestroyImmediate(_points[i].gameObject, false);
+            }
+
+            _points.Clear();
+        }
+
+        protected override void PathUpdated ()
+        {
+            if (pathCreator != null) 
                 Generate ();
-            }
         }
     }
 }

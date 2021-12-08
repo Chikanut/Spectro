@@ -15,6 +15,7 @@ public class RailMovement : PoolObject
         public EndOfPathInstruction MovementType = EndOfPathInstruction.Reverse;
         public float MovementDumping;
         [HideInInspector] public BezierPath PathData;
+   
     }
 
     [Header("Components")]
@@ -29,7 +30,7 @@ public class RailMovement : PoolObject
     private float _progressChangingVelocity;
     private Vector3 _targetPos;
     private bool _objectInited = false;
-    
+
     private void Start()
     {
         _targetPos = _path.path.GetPointAtTime(_settings.StartPos,_settings.MovementType);

@@ -187,6 +187,7 @@
           <e p="Character" t="Include">
             <e p="CharacterController.cs" t="Include" />
             <e p="Controller2D.cs" t="Include" />
+            <e p="PlatformController.cs" t="Include" />
             <e p="RaycastController.cs" t="Include" />
           </e>
           <e p="CompositionRoot.cs" t="Include" />
@@ -201,14 +202,17 @@
           </e>
           <e p="Controllers.cs" t="Include" />
           <e p="GamePlay" t="Include">
-            <e p="GameManager.cs" t="Include" />
-            <e p="LightController.cs" t="Include" />
-            <e p="LightTrigger.cs" t="Include" />
-            <e p="Objects" t="Include">
-              <e p="FinishTrigger.cs" t="Include" />
-              <e p="ObjectBase.cs" t="Include" />
-              <e p="RailMovement.cs" t="Include" />
+            <e p="_Redunant" t="Include">
+              <e p="LightModeObjects" t="Include">
+                <e p="FinishTrigger.cs" t="Include" />
+                <e p="LightController.cs" t="Include" />
+                <e p="LightTrigger.cs" t="Include" />
+                <e p="ObjectBase.cs" t="Include" />
+                <e p="RailMovement.cs" t="Include" />
+              </e>
             </e>
+            <e p="GameManager.cs" t="Include" />
+            <e p="InputManager.cs" t="Include" />
           </e>
           <e p="LevelDeserializer.cs" t="Include" />
           <e p="LevelSerializer.cs" t="Include" />

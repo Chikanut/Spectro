@@ -41,8 +41,7 @@ public class FinishTrigger : LightTriggerListener
     
     void OnFinished()
     {
-        GameManager.Instance.FinishTriggerActivated();
-        // SceneManager.LoadScene(_settings.NextSceneIndex);
+        Debug.Log("Finish");
     }
     
     public override string SerializeSettings()
