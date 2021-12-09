@@ -10,10 +10,11 @@ public class RaycastController : MonoBehaviour
     }
     
     protected const float SkinWidth = 0.015f;
+    private const float dstBetweenRays = .25f;
     
     [SerializeField] protected LayerMask _collisionLayers;
-    [SerializeField] protected int _horizontalRaysCount = 4;
-    [SerializeField] protected int _verticalRaysCount = 4;
+    protected int _horizontalRaysCount = 4;
+    protected int _verticalRaysCount = 4;
     
     protected RaycastOrigins _raycastOrigins;
     protected float _horizontalRaySpacing, _verticalRaySpacing;
@@ -42,8 +43,11 @@ public class RaycastController : MonoBehaviour
         var bounds = _collider.bounds;
         bounds.Expand(SkinWidth * -2);
 
-        _horizontalRaysCount = Mathf.Clamp(_horizontalRaysCount, 2, int.MaxValue);
-        _verticalRaysCount = Mathf.Clamp(_verticalRaysCount, 2, int.MaxValue);
+        float boundsWidth = bounds.size.x;
+        float boundsHeigh = bounds.size.y;
+
+        _horizontalRaysCount = Mathf.RoundToInt(boundsHeigh / dstBetweenRays);// Mathf.Clamp(_horizontalRaysCount, 2, int.MaxValue);
+        _verticalRaysCount =Mathf.RoundToInt(boundsWidth / dstBetweenRays);// Mathf.Clamp(_verticalRaysCount, 2, int.MaxValue);
 
         _horizontalRaySpacing = bounds.size.y / (_horizontalRaysCount - 1);
         _verticalRaySpacing = bounds.size.x / (_verticalRaysCount - 1);

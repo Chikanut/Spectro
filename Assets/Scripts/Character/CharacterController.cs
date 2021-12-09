@@ -9,19 +9,39 @@ public class CharacterController : MonoBehaviour
     [System.Serializable]
     public class Settings
     {
+        [Header("Body")]
         public int Lives;
-        public int Speed;
-        public float JumpHeight;
-        public float TimeToJumpApex = 0.4f;
+        
+        [Header("Movement")]
         public float MovementSpeed;
         public float GroundAccelerationTime = 1;
+        
+        [Header("Jumping")]
+        public float JumpHeight;
+        public float TimeToJumpApex = 0.4f;
         public float AirborneAccelerationTIme = 0.2f;
-
+        
+        [Header("Wall Jump")]
+        public float WallSlideSpeedMax = 3;
+        public Vector2 WallJumpClimb;
+        public Vector2 WallJumpOff;
+        public Vector2 WallLeap;
+        public float WallStickTime = 0.24f;
+    }
+    
+    [System.Serializable]
+    public class Status
+    {
+        public int CurrentLives;
+        public float JumpVelocity;
+        public int WallDirX;
+        public bool WallSliding;
     }
 
     [SerializeField] private Settings _settings;
+    [SerializeField] private Status _status;
 
-    private int _currentLives;
+   
     private bool _isInLite;
     private Vector3 _lightDir;
     private LightController _currentController;
@@ -30,49 +50,99 @@ public class CharacterController : MonoBehaviour
     
     private float _gravity = 20;
     private Vector3 _velocity;
-    private float _jumpVelocity;
+    private float _timeToWallUnstick;
     private float _veloctyXSmoothing;
     
     void Awake()
     {
-        _currentLives = _settings.Lives;
+        _status.CurrentLives = _settings.Lives;
         _controller = GetComponent<Controller2D>();
 
         _gravity = (2 * _settings.JumpHeight) / Mathf.Pow(_settings.TimeToJumpApex, 2);
-        _jumpVelocity = _gravity * _settings.TimeToJumpApex;
+        _status.JumpVelocity = _gravity * _settings.TimeToJumpApex;
+    }
+    
+    private Vector2 _directionalInput;
+    private bool _jumping;
+
+    public void SetDirectionalInput(Vector2 input)
+    {
+        _directionalInput = input;
+    }
+
+    public void OnJump()
+    {
+        if (_status.WallSliding)
+        {
+            if (_status.WallDirX  == _directionalInput.x)
+            {
+                _velocity.x = -_status.WallDirX  * _settings.WallJumpClimb.x;
+                _velocity.y = _settings.WallJumpClimb.y;
+            }else if (_directionalInput.x == 0)
+            {
+                _velocity.x = -_status.WallDirX  * _settings.WallJumpOff.x;
+                _velocity.y = _settings.WallJumpOff.y;
+            }
+            else
+            {
+                _velocity.x = -_status.WallDirX  * _settings.WallLeap.x;
+                _velocity.y = _settings.WallLeap.y;
+            }
+        }
+        if(_controller.Collisions.Below)
+            _velocity.y = _status.JumpVelocity;
     }
 
     void Update()
     {
-        UpdateInput();
+        UpdateMovementInfo();
+        UpdateWallMovementInfo();
         
-        var targetVelocityX = _input.x * _settings.MovementSpeed;
-
-        _velocity.x = Mathf.SmoothDamp(_velocity.x, targetVelocityX, ref _veloctyXSmoothing,
-            _controller.Collisions.Below ? _settings.GroundAccelerationTime : _settings.AirborneAccelerationTIme);
-        
+        _controller.Move(_velocity * Time.deltaTime);
 
         if (_controller.Collisions.Above || _controller.Collisions.Below)
             _velocity.y = 0;
-        
-        if (_jumping && _controller.Collisions.Below)
-            _velocity.y = _jumpVelocity;
-        
-        _velocity += Vector3.down * (_gravity * Time.deltaTime);
-        _controller.Move(_velocity * Time.deltaTime);
-
     }
-    
-    private Vector2 _input;
-    private bool _jumping;
 
-    void UpdateInput()
+    void UpdateMovementInfo()
     {
-        _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        _jumping = Input.GetKeyDown(KeyCode.Space);
+        var targetVelocityX = _directionalInput.x * _settings.MovementSpeed;
 
+        _velocity.x = Mathf.SmoothDamp(_velocity.x, targetVelocityX, ref _veloctyXSmoothing,
+            _controller.Collisions.Below ? _settings.GroundAccelerationTime : _settings.AirborneAccelerationTIme);
+        _velocity += Vector3.down * (_gravity * Time.deltaTime);
     }
-    
+
+    void UpdateWallMovementInfo()
+    {
+        _status.WallDirX = (_controller.Collisions.Left) ? -1 : 1;
+        _status.WallSliding = false;
+        if ((_controller.Collisions.Left || _controller.Collisions.Right) && !_controller.Collisions.Below &&
+            _velocity.y < 0)
+        {
+            _status.WallSliding = true;
+            if (_velocity.y < -_settings.WallSlideSpeedMax)
+            {
+                _velocity.y = -_settings.WallSlideSpeedMax;
+            }
+
+            if (_timeToWallUnstick > 0)
+            {
+                _velocity.x = 0;
+                _veloctyXSmoothing = 0;
+                
+                if ((int) Mathf.Sign(_directionalInput.x) != _status.WallDirX  && _directionalInput.x != 0)
+                    _timeToWallUnstick -= Time.deltaTime;
+                else
+                    _timeToWallUnstick = _settings.WallStickTime;
+            }
+            else
+            {
+                _timeToWallUnstick = _settings.WallStickTime;
+            }
+        }  
+    }
+
     //We gona make this logic in future
     #region LightMovement
 
@@ -81,7 +151,7 @@ public class CharacterController : MonoBehaviour
     {
         if (_jumping)
         {
-            _velocity.y = _jumpVelocity;
+            _velocity.y = _status.JumpVelocity;
             _isInLite = false;
             return;
         }
@@ -91,7 +161,7 @@ public class CharacterController : MonoBehaviour
         var currentTime = GetClosestTimeOnPath(transform.position);
         var length = _length;
         
-        currentTime += (_settings.Speed * Time.deltaTime) / length;
+        currentTime += (_settings.MovementSpeed * Time.deltaTime) / length;
         
         var nextPos = GetPointAtTime(currentTime);
         
