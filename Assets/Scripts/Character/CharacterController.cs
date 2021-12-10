@@ -89,8 +89,19 @@ public class CharacterController : MonoBehaviour
                 _velocity.y = _settings.WallLeap.y;
             }
         }
-        if(_controller.Collisions.Below)
-            _velocity.y = _status.JumpVelocity;
+
+        if (_controller.Collisions.Below)
+        {
+            if (_controller.Collisions.SlidingMaxSlope)
+            {
+                // if (_directionalInput.x != -Mathf.Sign(_controller.Collisions.SlopeNormal.x))//not jumping against slope
+                // {
+                    _velocity.y = _status.JumpVelocity * _controller.Collisions.SlopeNormal.y;
+                    _velocity.x = _status.JumpVelocity * _controller.Collisions.SlopeNormal.x;
+                // }
+            }else
+                _velocity.y = _status.JumpVelocity;
+        }
     }
 
     void Update()
@@ -101,7 +112,12 @@ public class CharacterController : MonoBehaviour
         _controller.Move(_velocity * Time.deltaTime);
 
         if (_controller.Collisions.Above || _controller.Collisions.Below)
-            _velocity.y = 0;
+        {
+            if (_controller.Collisions.SlidingMaxSlope)
+                _velocity.y += _controller.Collisions.SlopeNormal.y * -_gravity * Time.deltaTime;
+            else
+                _velocity.y = 0;
+        }
     }
 
     void UpdateMovementInfo()
@@ -117,8 +133,7 @@ public class CharacterController : MonoBehaviour
     {
         _status.WallDirX = (_controller.Collisions.Left) ? -1 : 1;
         _status.WallSliding = false;
-        if ((_controller.Collisions.Left || _controller.Collisions.Right) && !_controller.Collisions.Below &&
-            _velocity.y < 0)
+        if ((_controller.Collisions.Left || _controller.Collisions.Right) && !_controller.Collisions.Below && _velocity.y < 0)
         {
             _status.WallSliding = true;
             if (_velocity.y < -_settings.WallSlideSpeedMax)
