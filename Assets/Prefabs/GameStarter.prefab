@@ -45,6 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 293930536422012441}
   - component: {fileID: 5533051526997042236}
+  - component: {fileID: 3102914087010150887}
   m_Layer: 0
   m_Name: GameStarter
   m_TagString: Untagged
@@ -85,6 +86,37 @@ MonoBehaviour:
   _screenParent: {fileID: 8824742170947191388}
   _popUpParent: {fileID: 8208526394797316359}
   _elementsParent: {fileID: 6404021603213736850}
+--- !u!114 &3102914087010150887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816423772378830969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers: []
+  _installerPrefabs: []
+  _autoRun: 1
+  OnPreInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPreResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  _parentNewObjectsUnderSceneContext: 0
+  _contractNames: []
+  _parentContractNames: []
 --- !u!1 &2729337667311201390
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5740823515826479172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.9168525, y: -4.2776933, z: -42.049732}
+  m_LocalPosition: {x: -15.053148, y: 4.0423064, z: -12.849731}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293930536422012441}
@@ -295,11 +327,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 59.7
-  field of view: 17.061533
+  near clip plane: 0.1
+  far clip plane: 50
+  field of view: 40
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2

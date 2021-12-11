@@ -547,7 +547,7 @@ MonoBehaviour:
   m_Follow: {fileID: 49273050}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 4
+    OrthographicSize: 8
     NearClipPlane: 0.1
     FarClipPlane: 50
     Dutch: 0
@@ -2120,34 +2120,6 @@ PrefabInstance:
     - target: {fileID: 1816423772378830969, guid: 4436bc4b8eab33243a735bfe95039705, type: 3}
       propertyPath: m_Name
       value: GameStarter
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740823515826479160, guid: 4436bc4b8eab33243a735bfe95039705, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -15.053148
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740823515826479160, guid: 4436bc4b8eab33243a735bfe95039705, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.0423064
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740823515826479160, guid: 4436bc4b8eab33243a735bfe95039705, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -12.849731
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740823515826479161, guid: 4436bc4b8eab33243a735bfe95039705, type: 3}
-      propertyPath: field of view
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740823515826479161, guid: 4436bc4b8eab33243a735bfe95039705, type: 3}
-      propertyPath: far clip plane
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740823515826479161, guid: 4436bc4b8eab33243a735bfe95039705, type: 3}
-      propertyPath: near clip plane
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740823515826479161, guid: 4436bc4b8eab33243a735bfe95039705, type: 3}
-      propertyPath: orthographic size
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4436bc4b8eab33243a735bfe95039705, type: 3}
