@@ -8,7 +8,8 @@ namespace Player
     {
         public override void InstallBindings()
         {
-            Container.BindViewToMediator<PlayerInputView, PlayerInputMediator>();
+            Container.BindViewToMediator<PlayerInput, PlayerInputConnector>();
+            Container.BindViewToMediator<PlayerController, PlayerControllerConnector>();
         }
     }
 }

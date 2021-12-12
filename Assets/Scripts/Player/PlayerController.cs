@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using PathCreation.Utility;
+using ShootCommon.Views.Mediation;
 using UnityEngine;
 
 [RequireComponent(typeof(Controller2D))]
-public class CharacterController : MonoBehaviour
+public class PlayerController : View
 {
     [System.Serializable]
     public class Settings
