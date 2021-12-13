@@ -26,8 +26,6 @@ public class PlayerController : View
         
         [Header("Wall Jump")]
         public float WallSlideSpeedMax = 3;
-        public Vector2 WallJumpClimb;
-        public Vector2 WallJumpOff;
         public Vector2 WallLeap;
         public float WallStickTime = 0.24f;
     }
@@ -92,20 +90,9 @@ public class PlayerController : View
     {
         if (_status.WallSliding)
         {
-            if (_status.WallDirX  == _directionalInput.x)
-            {
-                _velocity.x = -_status.WallDirX  * _settings.WallJumpClimb.x;
-                _velocity.y = _settings.WallJumpClimb.y;
-            }else if (_directionalInput.x == 0)
-            {
-                _velocity.x = -_status.WallDirX  * _settings.WallJumpOff.x;
-                _velocity.y = _settings.WallJumpOff.y;
-            }
-            else
-            {
-                _velocity.x = -_status.WallDirX  * _settings.WallLeap.x;
-                _velocity.y = _settings.WallLeap.y;
-            }
+            _velocity.x = -_status.WallDirX  * _settings.WallLeap.x;
+            _velocity.y = _settings.WallLeap.y;
+            _directionalInput.x = Mathf.Sign(-_status.WallDirX);
         }
 
         if (_controller.Collisions.Below)

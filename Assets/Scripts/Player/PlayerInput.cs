@@ -9,6 +9,8 @@ namespace Player.InputSystem
     {
 
         [SerializeField] private Vector2 _sensitivity;
+        [SerializeField] private float _clickTime = 0.2f;
+        [SerializeField] private RectTransform _rect;
         
         private Action<Vector2> _onInput;
 
@@ -38,20 +40,25 @@ namespace Player.InputSystem
         public void OnPointerDown(PointerEventData eventData)
         {
             _prevPointTime = Time.time;
+            _prevPointPos = eventData.position;
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            if (!_dragging && Time.time - _prevPointTime < 0.2f)
+            if (!_dragging && Time.time - _prevPointTime < _clickTime)
                 _onInput?.Invoke(Vector2.up);
+            
+            // Debug.Log();
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (Mathf.Abs(eventData.delta.y) >= _sensitivity.y || Mathf.Abs(eventData.delta.x) >= _sensitivity.x)
+            if (Mathf.Abs((eventData.position.y - _prevPointPos.y) / _rect.rect.height) >= _sensitivity.y ||
+                Mathf.Abs((eventData.position.x - _prevPointPos.x) / _rect.rect.width) >= _sensitivity.x)
             {
-                _onInput?.Invoke(new Vector2(Mathf.Clamp(eventData.delta.x / _sensitivity.x, -1, 1),
-                    Mathf.Clamp(eventData.delta.y / _sensitivity.y, -1, 1)));
+                _onInput?.Invoke(new Vector2(
+                    Mathf.Clamp(((eventData.position.x - _prevPointPos.x)/ _rect.rect.width) / _sensitivity.x, -1, 1),
+                    Mathf.Clamp(((eventData.position.y - _prevPointPos.y)/ _rect.rect.height) / _sensitivity.y, -1, 1)));
             }
         }
     }
