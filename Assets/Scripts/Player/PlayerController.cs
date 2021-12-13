@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using PathCreation.Utility;
 using ShootCommon.Views.Mediation;
+using Unity.Mathematics;
 using UnityEngine;
 
 [RequireComponent(typeof(Controller2D))]
@@ -37,6 +39,8 @@ public class PlayerController : View
         public float JumpVelocity;
         public int WallDirX;
         public bool WallSliding;
+        public bool DodgingBottom;
+        public bool DodgingForward;
     }
 
     [SerializeField] private Settings _settings;
@@ -68,10 +72,23 @@ public class PlayerController : View
 
     public void SetDirectionalInput(Vector2 input)
     {
-        _directionalInput = input;
+        if (Mathf.Abs(input.x) >= 1)
+        {
+            // if (_directionalInput.x == input.x && _controller.Collisions.Below &&
+            //     !_status.DodgingForward)
+            //     OnForwardDodge();
+            // else
+                _directionalInput.x = Mathf.Sign(input.x);
+        }
+
+        if(input.y >= 1)
+            OnJump();
+        else if (input.y <= -1)
+            OnBottomDodge();
+    
     }
 
-    public void OnJump()
+    void OnJump()
     {
         if (_status.WallSliding)
         {
@@ -105,6 +122,25 @@ public class PlayerController : View
         }
     }
 
+    void OnForwardDodge()
+    {
+        _status.DodgingForward = true;
+        _velocity.x = _status.JumpVelocity;
+    }
+
+    void OnBottomDodge()
+    {
+        if (!_controller.Collisions.Below)
+        {
+            _status.WallSliding = false;
+            _status.DodgingBottom = true;
+
+            _velocity.y = -_status.JumpVelocity;
+        }
+        
+        _directionalInput.x = 0;
+    }
+
     void Update()
     {
         UpdateMovementInfo();
@@ -134,7 +170,7 @@ public class PlayerController : View
     {
         _status.WallDirX = (_controller.Collisions.Left) ? -1 : 1;
         _status.WallSliding = false;
-        if ((_controller.Collisions.Left || _controller.Collisions.Right) && !_controller.Collisions.Below && _velocity.y < 0)
+        if ((_controller.Collisions.Left || _controller.Collisions.Right) && !_controller.Collisions.Below && !_status.DodgingBottom && _velocity.y < 0)
         {
             _status.WallSliding = true;
             if (_velocity.y < -_settings.WallSlideSpeedMax)
@@ -156,7 +192,14 @@ public class PlayerController : View
             {
                 _timeToWallUnstick = _settings.WallStickTime;
             }
-        }  
+        }
+
+        if (_controller.Collisions.Below && _status.DodgingBottom)
+        {
+            _status.DodgingBottom = false;
+        }
+        
+        // if(_status.DodgingForward)
     }
 
     //We gona make this logic in future

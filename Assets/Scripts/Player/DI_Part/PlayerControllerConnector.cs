@@ -25,11 +25,7 @@ public class PlayerControllerConnector : Mediator<PlayerController>
     {
         var input = signal.DirectionalInput;
         
-        if (Mathf.Abs(input.x) > 1)
-            View.SetDirectionalInput(new Vector2(Mathf.Sign(input.x), 0));
-
-        if(signal.DirectionalInput.y > 1)
-            View.OnJump();
+        View.SetDirectionalInput(signal.DirectionalInput);
     }
     
 }
